@@ -21,7 +21,7 @@ export const useFetch = ( url, endpoint ) => {
                 const resp = await instance.get( endPoint )
                 
                 if( resp.status !== 200 ){
-                    throw{ 
+                    return{ 
                         err: true, 
                         status:resp.status, 
                         statusText: !resp.statusText? 'Ocurrio un error': resp.statusText, 
@@ -40,7 +40,7 @@ export const useFetch = ( url, endpoint ) => {
 
         getData( url, endpoint ) 
 
-    }, [])
+    }, [ url, endpoint, isPending ])
     
     return{
         data,
