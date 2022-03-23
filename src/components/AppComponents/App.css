@@ -148,3 +148,19 @@
         border-bottom-left-radius: 0;
     }
 }
+
+
+@media (max-width: 520px) {
+    
+    .location-info{
+        font-size: 12px;
+    }
+
+    .location-info div{
+        flex-direction: column;
+    }
+
+    .location-info div p{
+        margin: .15rem;
+    }
+}
