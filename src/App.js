@@ -9,6 +9,9 @@ function App() {
       <section className='App-info' >
         <Results/>
       </section>
+      <footer>
+        <p>Design and code by <a href="https://github.com/DVDLC" target={ '_blank' } >DavidLC.</a></p>
+      </footer>
     </div>
   );
 }
