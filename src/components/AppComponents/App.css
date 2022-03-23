@@ -36,6 +36,7 @@
     padding: 1rem;
     border-bottom-right-radius: 7px;
     border: none;
+    text-align: center;
     font-weight: bold;
     font-size: 16px;
     transition: all .25s;
@@ -119,33 +120,19 @@
 @media (max-width: 768px) {
     
     .App-container{
-        font-size: 1.25vw;
+        font-size: 13.5px;
     }
-
+    
     .App-container input{
-        font-size: 2vw;
-    }
-    
-    .App-container .btn-search{
-        font-size: 2vw;
-    }
-    
-    .App-container .btn-search{
-        background-color: #318bbe;
-        color: #fff;
-        padding: 1rem;
-        border-bottom-right-radius: 7px;
-        border: none;
-        font-weight: bold;
-        font-size: 16px;
-        transition: all .25s;
+        font-size: 13.5px;
     }
 
-    .card-container{
-        width: 200px;   
+    .App-container .btn-search{
+        font-size: 13.5px;
     }
     
     .resident-card{
+        width: 200px;
         flex-direction: column;
     }
 
