@@ -8,12 +8,23 @@ import axios from 'axios';
 
 function ResidentList( { data } ) {
 
-   
+    const [ page, setPage ] = useState( 1 )
+    
+    const itemsNumber = 11,
+        lastIndex = page * itemsNumber,
+        firstIndex = lastIndex - itemsNumber,
+        totalPages = Math.ceil( data?.residents?.length / itemsNumber ),
+        characterPaginated = data?.residents?.slice(firstIndex, lastIndex),
+        pagesNumbers = []
+
+        for( let i = 1; i <= totalPages; i++ ){
+            pagesNumbers.push( i )
+        }
+
+
     function ResidentCard( { url } ){
 
         const [ character, setCharacter ] = useState( )
-
-
 
         useEffect( () => {
     
@@ -47,13 +58,27 @@ function ResidentList( { data } ) {
     }
 
     return(
-        <div className='card-container' >
-            {
-            data?.residents?.map( url => (
-                <ResidentCard url={ url } key={ url }/>
-            ))
-            }
-        </div>
+        <>
+            <div className='card-container' >
+                {
+                    characterPaginated?.map( url => (
+                    <ResidentCard url={ url } key={ url }/>
+                    ))
+                }
+            </div>
+            <div className='pagination-wrapp' >
+                {
+                    pagesNumbers.map( page => (
+                        <button
+                            onClick={ () => setPage( page ) }
+                            key={ page }
+                        >    
+                        { page }</button>
+                    ))
+                }
+            </div>
+        </>
+
     )
 }
 
